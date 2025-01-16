@@ -1,0 +1,155 @@
+.login{
+  width: 19rem;
+  height: auto;
+  background-color: var(--dodger-blue-500);
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.login::before{
+  content: '';
+  position: absolute;
+  height: 20rem;
+  width: inherit;
+  transform:
+    translateX(-2rem)
+    translateY(-3rem)
+  ;
+  background-color: var(--dodger-blue-600);
+  border-radius: 10px;
+  /* update the 85% to control the curvature
+     you can also update the 50% to control the position
+  */
+  clip-path: ellipse(85% 100% at 50% 0%);
+}
+// screen < 512px to apply this CSS
+@media screen and (min-width: 512px) {
+  .login{
+    width: 28rem;
+  }
+}
+.form{
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+.form__title{
+  text-align: center;
+  padding: 0;
+  margin: 0 0 0.5rem 0;
+  color: var(--dodger-blue-100);
+  font-size: var(--font-title-mid);
+}
+.form__input{
+  border: none;
+  border-radius: 10px;
+  height: 1.5rem;
+  box-sizing: border-box;
+  color: var(--dodger-blue-800);
+  text-align: center;
+}
+.form__input:focus {
+  outline: 3px solid var(--dodger-blue-500);
+  outline-offset: 3px;
+}
+.form__label{
+  color: var(--dodger-blue-50);
+  text-transform: capitalize;
+  font-style: italic;
+}
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 2rem;
+  // border: 1px solid red;
+}
+.actions__button{
+  background-color: var(--dodger-blue-400);
+  border-radius: 10px;
+  border: none;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  // font
+  font-size: var(--font-paragraph-mid);;
+  color: var(--dodger-blue-50);
+}
+.actions__button:active{
+  background-color: var(--dodger-blue-700);
+  color: var(--dodger-blue-50);
+}
+.message[open]{
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dodger-blue-200);
+  border: none;
+  border-radius: 10px;
+  width: 15rem;
+  height: fit-content;
+  animation: fadeIn 250ms ease-in-out normal;
+  row-gap: 1rem;
+}
+.message::before{
+  content: "";
+  position: absolute;
+  transform:
+    translateY(-2rem)
+  ;
+  width: 17rem;
+  height: 7rem;
+  background-color: var(--dodger-blue-300);
+  --c: 35px; /* control the curvature (works with percentage) */
+  aspect-ratio: 3/2;
+  /* you can also update the 60%  */
+  mask: radial-gradient(60% var(--c) at bottom,#0000 calc(100% - 2px),#000);
+}
+@keyframes fadeIn{ // Animation to change opacity
+  from{
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.message::backdrop{
+  background-color: var(--dodger-blue-950); // Remove blur background
+  opacity: 0.4;
+}
+.message__cont{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.message__title{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: var(--dodger-blue-700);
+  text-align: center;
+  font-size: var(--font-title-small);
+}
+.message__text{
+  position: relative;
+  color: var(--dodger-blue-800);
+  text-align: center;
+}
+.---left{
+  text-align: left;
+  line-height: 1.5rem;
+}
+.message__icon{
+  position: relative;
+  width: 8rem;
+  height: auto;
+}
+

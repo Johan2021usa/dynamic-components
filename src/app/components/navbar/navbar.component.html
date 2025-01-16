@@ -1,0 +1,13 @@
+<nav class="nav">
+  <h3 class="nav__title">{{title}}</h3>
+  <input class="nav__button" routerLink="/dashboard" routerLinkActive="active" type="submit" value="home">
+  <input class="nav__button" routerLink="/showcase" routerLinkActive="active" type="submit" (click)="redirectLogin()" value="showcase">
+  @if (loginState==='false') {
+    <input
+    class="nav__button" routerLink="/login" routerLinkActive="active" type="submit" value="Login" (click)="login()">
+  }
+  @if (loginState==='true') {
+    <input
+    class="nav__button" routerLink="/dashboard" routerLinkActive="active" type="submit" (click)="logOut()" value="Log out">
+  }
+</nav>

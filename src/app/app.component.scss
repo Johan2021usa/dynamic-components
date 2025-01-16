@@ -1,0 +1,13 @@
+.cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  row-gap: 15px;
+  box-sizing: border-box;
+  // visuals
+  background-color: #11275a;
+}

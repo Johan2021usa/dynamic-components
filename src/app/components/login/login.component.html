@@ -1,0 +1,43 @@
+<section class="login">
+  <form class="form" (ngSubmit)="confirm()" [formGroup]="myForm">
+    <h2 class="form__title">Login</h2>
+
+    <label class="form__label" for="email">E-mail</label>
+    <input class="form__input" id="email" type="email" formControlName="email">
+
+    <label class="form__label" for="password">Password</label>
+    <input class="form__input" id="password" type="password" formControlName="password" required="required">
+
+    <article class="actions">
+      <input class="actions__button" type="submit" value="Confirm">
+
+      <input class="actions__button" routerLink="/dashboard" type="button" value="Cancel">
+    </article>
+  </form>
+</section>
+
+<dialog class="message" #message (click)="toggleDialog(false)">
+  <h3 class="message__title">¡Alert!</h3>
+
+  <article class="message__cont" *ngIf="myForm.controls.email.errors?.['required'] || myForm.controls.password.errors?.['required']">
+    <p class="message__text">Empty fields, please set an email and password</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/5445/5445197.png" alt="empty-fields" class="message__icon">
+  </article>
+
+  <article class="message__cont" *ngIf="myForm.controls.email.errors?.['email']">
+    <p class="message__text">Please set a valid email address</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/5445/5445197.png" alt="empty-fields" class="message__icon">
+  </article>
+
+  <article class="message__cont" *ngIf="myForm.controls.password.errors?.['pattern']">
+    <p class="message__text">Your password must have:</p>
+    <ul>
+      <li class="message__text ---left">1 uppercase letter: A, B...</li>
+      <li class="message__text ---left">1 lowercase letter: a, b...</li>
+      <li class="message__text ---left">1 digit: 1,2,3,4...</li>
+      <li class="message__text ---left">1 special character: #, *...</li>
+      <li class="message__text ---left">Length between 8 and 20 characters</li>
+    </ul>
+    <img src="https://cdn-icons-png.flaticon.com/512/5445/5445197.png" alt="empty-fields" class="message__icon">
+  </article>
+</dialog>

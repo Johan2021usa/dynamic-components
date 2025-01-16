@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  // Color palette
+  --dodger-blue-50: #eef7ff;
+  --dodger-blue-100: #d9edff;
+  --dodger-blue-200: #bce1ff;
+  --dodger-blue-300: #8ecfff;
+  --dodger-blue-400: #59b3ff;
+  --dodger-blue-500: #298dff;
+  --dodger-blue-600: #1b72f5;
+  --dodger-blue-700: #145ce1;
+  --dodger-blue-800: #174ab6;
+  --dodger-blue-900: #19418f;
+  --dodger-blue-950: #142957;
+
+  // Font/sizes
+  --font-title-huge: 2.5rem;
+  --font-title-mid: 1.8rem;
+  --font-title-small: 1.5rem;
+  --font-paragraph-huge: 1.3rem;
+  --font-paragraph-mid: 1rem;
+}
