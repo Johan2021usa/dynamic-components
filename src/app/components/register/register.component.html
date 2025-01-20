@@ -1,6 +1,6 @@
 <section class="login">
   <form class="form" (ngSubmit)="confirm()" [formGroup]="myForm">
-    <h2 class="form__title">Login</h2>
+    <h2 class="form__title">Register</h2>
 
     <label class="form__label" for="email">E-mail</label>
     <input class="form__input" id="email" type="email" formControlName="email">
@@ -14,10 +14,6 @@
       <input class="actions__button" routerLink="/dashboard" type="button" value="Cancel">
     </article>
   </form>
-  <section class="login__container">
-    <p class="login__text">Not yet registered?</p>
-    <input class="actions__button ---secondary" routerLink="/register" type="button" value="click here">
-  </section>
 </section>
 
 <dialog class="message" #message (click)="toggleDialog(false)">
@@ -30,6 +26,23 @@
 
   <article class="message__cont" *ngIf="myForm.controls.email.errors?.['email']">
     <p class="message__text">Please set a valid email address</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/5445/5445197.png" alt="empty-fields" class="message__icon">
+  </article>
+
+  <article class="message__cont" *ngIf="redirect">
+    <p class="message__text">Please confirm your account in your email and then login</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/10804/10804719.png" alt="empty-fields" class="message__icon">
+  </article>
+
+  <article class="message__cont" *ngIf="myForm.controls.password.errors?.['pattern']">
+    <p class="message__text">Your password must have:</p>
+    <ul>
+      <li class="message__text ---left">1 uppercase letter: A, B...</li>
+      <li class="message__text ---left">1 lowercase letter: a, b...</li>
+      <li class="message__text ---left">1 digit: 1,2,3,4...</li>
+      <li class="message__text ---left">1 special character: #, *...</li>
+      <li class="message__text ---left">Length between 8 and 20 characters</li>
+    </ul>
     <img src="https://cdn-icons-png.flaticon.com/512/5445/5445197.png" alt="empty-fields" class="message__icon">
   </article>
 </dialog>

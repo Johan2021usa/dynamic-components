@@ -1,10 +1,13 @@
 .login{
+  display: flex;
+  flex-direction: column;
   width: 19rem;
   height: auto;
   background-color: var(--dodger-blue-500);
   padding: 3rem 2rem;
   border-radius: 10px;
   box-sizing: border-box;
+  row-gap: 2.2rem;
 }
 .login::before{
   content: '';
@@ -21,6 +24,19 @@
      you can also update the 50% to control the position
   */
   clip-path: ellipse(85% 100% at 50% 0%);
+}
+.login__container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 0.5rem;
+  gap: 0.6rem;
+}
+.login__text{
+  color: var(--dodger-blue-50);
+  margin: 0;
+  font-size: var(--font-paragraph-mid);
 }
 // screen < 512px to apply this CSS
 @media screen and (min-width: 512px) {
@@ -151,5 +167,19 @@
   position: relative;
   width: 8rem;
   height: auto;
+}
+.---secondary{
+  background-color: var(--dodger-blue-500);
+  color: var(--dodger-blue-50);
+  padding: 0;
+  transition: color 150ms ease-in-out;
+}
+.---secondary:hover{
+  color: var(--dodger-blue-800);
+}
+.---secondary:active{
+  background-color: var(--dodger-blue-500);
+  color: var(--dodger-blue-50);
+  padding: 0;
 }
 

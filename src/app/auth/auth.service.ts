@@ -20,6 +20,11 @@ export class AuthService{
     );
   }
 
+  async signUp(dataUser:any){
+    let { data, error } = await this.supabase.auth.signUp(dataUser);
+    return {data, error}
+  }
+
   async login(dataUser:any){
     const { data, error } = await this.supabase.auth.signInWithPassword(dataUser);
     return{ data, error}
@@ -38,8 +43,6 @@ export class AuthService{
           }else {
             resolve(false); // Default fallback
           }
-          const loginState = { event, session };
-          // console.log('loginState: ', loginState);
         }
       );
     });

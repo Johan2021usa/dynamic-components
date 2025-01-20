@@ -8,7 +8,7 @@
   gap: 1rem;
   box-sizing: border-box;
   // visuals
-  background-color: #298dff;
+  background-color: var(--dodger-blue-500);
 }
 @media screen and (max-width: 492px){
   .nav{

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit{
   @ViewChild('message') message!:ElementRef;
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
     this.myForm = new FormGroup({
       'email': new FormControl('', [Validators.required, Validators.email]),
-      'password' : new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/)]) // For regex we must use // slash characters to englobe the regex...
+      'password' : new FormControl('', Validators.required) //
     });
   }
 
