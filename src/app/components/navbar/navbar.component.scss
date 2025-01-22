@@ -3,12 +3,12 @@
   flex-wrap: wrap;
   height: auto;
   justify-content: right;
-  padding: 0.5rem 4.5rem;
+  padding: 0.5rem 15vw;
+  width: 100%;
   gap: 1rem;
-  width: 100vw;
-  box-sizing: border-box;
   // visuals
   background-color: var(--dodger-blue-500);
+  box-sizing: border-box;
 }
 @media screen and (max-width: 492px){
   .nav{
