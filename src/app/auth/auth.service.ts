@@ -20,6 +20,13 @@ export class AuthService{
     );
   }
 
+  /**
+   * Pending documentation to implement id saved in localStorage.
+   * https://supabase.com/docs/reference/javascript/auth-getuser
+   * https://supabase.com/docs/reference/javascript/auth-onauthstatechange
+   *
+   */
+
   async signUp(dataUser:any){
     let { data, error } = await this.supabase.auth.signUp(dataUser);
     return {data, error}

@@ -1,11 +1,11 @@
 .nav{
-  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   height: auto;
   justify-content: right;
   padding: 0.5rem 4.5rem;
   gap: 1rem;
+  width: 100vw;
   box-sizing: border-box;
   // visuals
   background-color: var(--dodger-blue-500);

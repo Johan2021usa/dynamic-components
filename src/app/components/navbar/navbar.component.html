@@ -4,7 +4,7 @@
   <input class="nav__button" routerLink="/showcase" routerLinkActive="active" type="submit" (click)="redirectLogin()" value="showcase">
   @if (loginState==='false') {
     <input
-    class="nav__button" routerLink="/login" routerLinkActive="active" type="submit" value="Login" (click)="login()">
+    class="nav__button" routerLink="/login" routerLinkActive="active" type="submit" value="Login">
   }
   @if (loginState==='true') {
     <input

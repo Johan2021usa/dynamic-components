@@ -12,14 +12,17 @@ import { Observable } from 'rxjs';
 })
 export class NavbarComponent implements OnInit{
   title = 'Dynamic Components';
-  loginState!:any;
+  loginState:any;
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private zone: NgZone,
   ){
-    this.loginState = localStorage.getItem('navBarState');
+    this.loginState = localStorage.getItem('navBarState'); // By default local storage will be null, so that we must set it as null each time the component is loaded, that is the reason of line 23, Otherwise, the login button won't appear the first time a person gets in the website.
+    if(this.loginState===null){
+      this.loginState = "false";
+    }
   }
 
   ngOnInit(): void {
@@ -28,8 +31,6 @@ export class NavbarComponent implements OnInit{
       this.loginState = localStorage.getItem('navBarState');
     })
   }
-
-  login(){}
 
   logOut(){
     this.router.navigate(['/login']);
